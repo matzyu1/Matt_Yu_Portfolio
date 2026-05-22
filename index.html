@@ -26,7 +26,6 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#volunteering">Volunteering</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -48,12 +47,12 @@
               <a class="button primary" href="#projects">View Projects</a>
               <!-- Replace this CV file if you rename or update the PDF in /assets. -->
               <a class="button secondary" href="assets/Matt-Yu-Data-Analyst-CV.pdf" download>Download CV</a>
-              <a class="button secondary" href="#contact">Contact Me</a>
             </div>
           </div>
           <aside class="hero-panel personal-panel" aria-label="Personal details">
+            <p class="contact-hint">contact me! <span aria-hidden="true">👉</span></p>
             <ul class="personal-details compact">
-              <li><span aria-hidden="true">📧</span><a href="mailto:matzyu41@gmail.com">matzyu41@gmail.com</a></li>
+              <li><span aria-hidden="true">📧</span><button class="email-copy" type="button" data-email="matzyu41@gmail.com">matzyu41@gmail.com</button></li>
               <li><span aria-hidden="true">📍</span><span>London, United Kingdom</span></li>
               <li><span aria-hidden="true">in</span><a href="https://www.linkedin.com/in/matt-yu-80a207297/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               <li><span aria-hidden="true">GH</span><a href="https://github.com/matzyu1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -303,31 +302,6 @@
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="container contact-centred">
-          <div class="contact-intro">
-            <p class="eyebrow">Contact</p>
-            <h2>Send an enquiry.</h2>
-            <p>
-              Open to entry-level Data Analyst, Insight Analyst, Marketing Analyst, Commercial Analyst, Business
-              Analyst and Operations Analyst roles.
-            </p>
-          </div>
-          <form class="enquiry-form" id="enquiry-form">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-
-            <button class="button primary" type="submit">Send Message</button>
-            <p class="form-note">This opens your email app with the message addressed to Matt.</p>
-          </form>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

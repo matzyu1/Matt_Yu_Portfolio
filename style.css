@@ -355,8 +355,7 @@ h1 {
 }
 
 .card,
-.experience-card,
-.enquiry-form {
+.experience-card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -431,8 +430,27 @@ h1 {
   text-decoration: none;
 }
 
-.personal-details a:hover {
+.personal-details a:hover,
+.email-copy:hover {
   color: var(--accent-warm);
+}
+
+.contact-hint {
+  margin: 0;
+  color: var(--accent-warm);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.email-copy {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: var(--accent-dark);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
 }
 
 .projects-grid {
@@ -552,64 +570,6 @@ h1 {
   padding-bottom: 72px;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr minmax(260px, 360px);
-  gap: 32px;
-  align-items: start;
-}
-
-.contact-centred {
-  display: grid;
-  justify-items: center;
-  gap: 40px;
-}
-
-.contact-intro {
-  max-width: 680px;
-  text-align: center;
-}
-
-.enquiry-form {
-  display: grid;
-  gap: 16px;
-  width: min(760px, 100%);
-  padding: 40px;
-}
-
-.enquiry-form label {
-  color: var(--text);
-  font-size: 0.92rem;
-  font-weight: 800;
-}
-
-.enquiry-form input,
-.enquiry-form textarea {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  color: var(--text);
-  font: inherit;
-  resize: vertical;
-}
-
-.enquiry-form input:focus,
-.enquiry-form textarea:focus {
-  border-color: var(--accent);
-  outline: 3px solid rgba(47, 111, 126, 0.16);
-}
-
-.enquiry-form .button {
-  margin-top: 8px;
-  cursor: pointer;
-}
-
-.form-note {
-  margin: 4px 0 0;
-  font-size: 0.88rem;
-}
-
 .site-footer {
   padding: 32px 0;
   background: transparent;
@@ -626,8 +586,7 @@ h1 {
   .hero-grid,
   .about-grid,
   .projects-grid,
-  .experience-card,
-  .contact-grid {
+  .experience-card {
     grid-template-columns: 1fr;
   }
 
@@ -724,8 +683,7 @@ h1 {
   .focus-summary,
   .card,
   .project-content,
-  .experience-card,
-  .enquiry-form {
+  .experience-card {
     padding: 24px;
     border-radius: 20px;
   }
@@ -758,14 +716,6 @@ h1 {
     padding: 24px;
   }
 
-  .contact-intro {
-    text-align: left;
-  }
-
-  .contact-centred {
-    justify-items: stretch;
-    gap: 32px;
-  }
 }
 
 @media (max-width: 460px) {

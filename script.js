@@ -2,7 +2,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#nav-menu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const sections = document.querySelectorAll("main section[id]");
-const enquiryForm = document.querySelector("#enquiry-form");
+const emailCopyButton = document.querySelector(".email-copy");
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 
@@ -38,16 +38,37 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => observer.observe(section));
 
-// Static-site enquiry flow: opens an email draft with the visitor's details.
-enquiryForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+// Copies Matt's email, confirms it briefly, then restores the email display.
+const copyEmailToClipboard = async (email) => {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(email);
+    return;
+  }
 
-  const formData = new FormData(enquiryForm);
-  const name = formData.get("name").trim();
-  const email = formData.get("email").trim();
-  const message = formData.get("message").trim();
-  const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  const textArea = document.createElement("textarea");
+  textArea.value = email;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  document.execCommand("copy");
+  textArea.remove();
+};
 
-  window.location.href = `mailto:matzyu41@gmail.com?subject=${subject}&body=${body}`;
-});
+if (emailCopyButton) {
+  emailCopyButton.addEventListener("click", async () => {
+    const email = emailCopyButton.dataset.email;
+
+    try {
+      await copyEmailToClipboard(email);
+      emailCopyButton.textContent = "Copied to clipboard";
+    } catch {
+      emailCopyButton.textContent = "Copy failed";
+    }
+
+    setTimeout(() => {
+      emailCopyButton.textContent = email;
+    }, 1800);
+  });
+}
