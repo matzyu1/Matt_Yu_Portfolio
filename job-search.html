@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Matt Yu job search hub for analyst roles, with quick job-board searches, ATS links and an application tracker."
+    />
+    <title>Matt Yu | Job Search Hub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary navigation">
+        <a class="logo" href="index.html#home" aria-label="Matt Yu home">Matt Yu</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Open navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="active" href="job-search.html">Job Hub</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="job-hub">
+      <section class="section job-hero">
+        <div class="container job-hero-grid">
+          <div>
+            <p class="eyebrow">Job Search Hub</p>
+            <h1>One place to start the hunt.</h1>
+            <p>
+              Set the role and location once, then open focused searches across job boards and ATS pages without
+              rebuilding the same query every time.
+            </p>
+          </div>
+          <form class="job-search-panel" aria-label="Job search settings">
+            <label for="job-role">Role keywords</label>
+            <input id="job-role" type="text" value="junior data analyst" />
+
+            <label for="job-location">Location</label>
+            <input id="job-location" type="text" value="London" />
+
+            <label class="toggle-row" for="job-remote">
+              <input id="job-remote" type="checkbox" />
+              <span>Include remote searches</span>
+            </label>
+          </form>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="container job-workspace">
+          <section class="source-panel" aria-labelledby="quick-open-title">
+            <div class="section-heading compact">
+              <p class="eyebrow">Quick Open</p>
+              <h2 id="quick-open-title">Start with the highest-signal sources.</h2>
+            </div>
+            <div class="quick-source-grid" aria-label="Recommended job sources">
+              <button type="button" data-source="linkedin">
+                <strong>LinkedIn</strong>
+                <span>Broad scan</span>
+              </button>
+              <button type="button" data-source="indeed">
+                <strong>Indeed</strong>
+                <span>Volume</span>
+              </button>
+              <button type="button" data-source="greenhouse">
+                <strong>Greenhouse</strong>
+                <span>Direct ATS</span>
+              </button>
+              <button type="button" data-source="lever">
+                <strong>Lever</strong>
+                <span>Direct ATS</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="source-panel" aria-labelledby="all-sources-title">
+            <div class="section-heading compact">
+              <p class="eyebrow">Sources</p>
+              <h2 id="all-sources-title">Generated links from your search settings.</h2>
+            </div>
+            <ul class="job-source-links" id="job-source-links"></ul>
+          </section>
+
+          <section class="source-panel application-panel" aria-labelledby="tracker-title">
+            <div class="section-heading compact">
+              <p class="eyebrow">Tracker</p>
+              <h2 id="tracker-title">Save the roles worth following up.</h2>
+            </div>
+            <form class="application-form" id="application-form">
+              <label for="application-company">Company</label>
+              <input id="application-company" name="company" type="text" required />
+
+              <label for="application-role">Role</label>
+              <input id="application-role" name="role" type="text" required />
+
+              <label for="application-status">Status</label>
+              <select id="application-status" name="status">
+                <option>Interested</option>
+                <option>Applied</option>
+                <option>Follow up</option>
+                <option>Interview</option>
+              </select>
+
+              <label for="application-link">Link</label>
+              <input id="application-link" name="link" type="url" placeholder="https://..." />
+
+              <button class="button primary" type="submit">Add Role</button>
+            </form>
+            <div class="tracker-heading">
+              <h3>Saved roles</h3>
+              <button class="button small secondary" id="clear-applications" type="button">Clear</button>
+            </div>
+            <ul class="application-list" id="application-list"></ul>
+          </section>
+
+          <aside class="daily-rhythm" aria-labelledby="rhythm-title">
+            <p class="eyebrow">Daily Rhythm</p>
+            <h2 id="rhythm-title">A cleaner loop.</h2>
+            <ol>
+              <li>Open the four quick sources.</li>
+              <li>Save only roles that match your analyst path.</li>
+              <li>Apply or follow up from the tracker.</li>
+              <li>Refresh keywords when the results feel stale.</li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Matt Yu. Built with HTML, CSS and JavaScript.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

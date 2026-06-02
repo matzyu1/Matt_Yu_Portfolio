@@ -1,0 +1,13 @@
+{
+  "name": "job-match-finder",
+  "version": "1.0.0",
+  "description": "Standalone job search and CV match scoring website.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A calm UK job search tool with broad API coverage, close-match keyword expansion and CV-based match ratings."
+    />
+    <title>Job Match Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Job Match Finder home">
+        <span class="brand-mark" aria-hidden="true">JM</span>
+        <span>Job Match Finder</span>
+      </a>
+      <span class="status-pill" id="server-status">Ready</span>
+    </header>
+
+    <main>
+      <section class="search-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Calm, broad UK job search</p>
+          <h1 id="page-title">Find roles that are close to what you mean.</h1>
+        </div>
+
+        <form class="search-card" id="search-form">
+          <div class="match-help">
+            <button class="info-button" type="button" aria-describedby="expanded-keywords" aria-label="Show close-match expansion">i</button>
+            <div class="match-popover" id="expanded-keywords" role="tooltip">Add keywords to preview related terms.</div>
+          </div>
+
+          <label class="sr-only" for="keyword-input">Keyword</label>
+          <div class="keyword-bar" id="keyword-bar">
+            <div class="keyword-chips" id="keyword-chips" aria-label="Added keywords"></div>
+            <input id="keyword-input" type="text" placeholder="Type a keyword, for example data analyst" autocomplete="off" />
+            <button class="add-button" id="add-keyword" type="button">Add</button>
+          </div>
+
+          <div class="filters" aria-label="Search filters">
+            <label>
+              <span>Location</span>
+              <input id="location" list="uk-locations" type="text" value="London" />
+              <datalist id="uk-locations">
+                <option value="United Kingdom"></option>
+                <option value="London"></option>
+                <option value="Manchester"></option>
+                <option value="Birmingham"></option>
+                <option value="Leeds"></option>
+                <option value="Glasgow"></option>
+                <option value="Edinburgh"></option>
+                <option value="Bristol"></option>
+                <option value="Liverpool"></option>
+                <option value="Sheffield"></option>
+                <option value="Cardiff"></option>
+                <option value="Newcastle upon Tyne"></option>
+                <option value="Nottingham"></option>
+                <option value="Cambridge"></option>
+                <option value="Oxford"></option>
+                <option value="Remote UK"></option>
+              </datalist>
+            </label>
+
+            <label>
+              <span>Posting date</span>
+              <select id="posted-within">
+                <option value="1">Last 24 hours</option>
+                <option value="3">Last 3 days</option>
+                <option value="7" selected>Last 7 days</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Work type</span>
+              <select id="work-type">
+                <option value="any" selected>Any</option>
+                <option value="full-time">Full time</option>
+                <option value="part-time">Part time</option>
+                <option value="internship">Internship</option>
+                <option value="contract">Contract</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Experience</span>
+              <select id="experience-level">
+                <option value="any" selected>Any</option>
+                <option value="entry">Entry</option>
+                <option value="mid">Mid</option>
+                <option value="senior">Senior</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="cv-row">
+            <label for="cv-file">CV for match rating</label>
+            <input id="cv-file" type="file" accept=".txt,.pdf,.doc,.docx" />
+          </div>
+
+          <button class="primary-button" type="submit">Search jobs</button>
+        </form>
+      </section>
+
+      <section class="results-section" aria-label="Job results">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Results</p>
+            <h2 id="result-heading">Ready when you are</h2>
+          </div>
+          <button class="secondary-button" type="button" id="clear-results">Clear</button>
+        </div>
+
+        <div class="source-strip" id="source-strip" aria-label="Supported sources"></div>
+        <div class="notice" id="notice" hidden></div>
+
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Job title</th>
+                <th>Work mode</th>
+                <th>Salary</th>
+                <th>Rating</th>
+                <th>URL</th>
+              </tr>
+            </thead>
+            <tbody id="results-body">
+              <tr>
+                <td colspan="6" class="empty-cell">Add keywords, choose filters, then search.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="score-details">
+          <summary>How ratings are calculated</summary>
+          <p>
+            Ratings use title relevance, technical skills, analytical experience, domain relevance,
+            seniority fit, soft skills and evidence strength, then convert the weighted result to a score out of 10.
+          </p>
+        </details>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
