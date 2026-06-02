@@ -79,6 +79,9 @@ if (-not $status) {
 
 Write-Step "Pushing '$Branch' to GitHub"
 git push -u origin $Branch
+if ($LASTEXITCODE -ne 0) {
+  throw "Push failed. Check the remote repository and authentication, then run ship-to-github again."
+}
 
 Write-Step "Triggering GitHub Pages deploy"
 Write-Host "GitHub Actions will deploy the portfolio from .github/workflows/deploy-pages.yml." -ForegroundColor Green

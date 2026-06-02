@@ -1,4 +1,5 @@
 node_modules/
+.codex/
 *.log
 server.out.log
 server.err.log
