@@ -2,13 +2,35 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector("#nav-menu");
 const navLinks = document.querySelectorAll(".nav-menu a");
 const sections = document.querySelectorAll("main section[id]");
-const enquiryForm = document.querySelector("#enquiry-form");
 const jobHub = document.querySelector("#job-hub");
+const revealItems = document.querySelectorAll(".reveal");
+const emailCopyButton = document.querySelector(".email-copy");
 
 const year = document.querySelector("#year");
 
 if (year) {
   year.textContent = new Date().getFullYear();
+}
+
+if (revealItems.length > 0) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    revealItems.forEach((item) => item.classList.add("visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
 }
 
 // Opens and closes the mobile navigation menu.
@@ -49,19 +71,43 @@ if (sections.length > 0 && navLinks.length > 0) {
   sections.forEach((section) => observer.observe(section));
 }
 
-// Static-site enquiry flow: opens an email draft with the visitor's details.
-if (enquiryForm) {
-  enquiryForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+if (emailCopyButton) {
+  const status = emailCopyButton.parentElement.querySelector(".copy-status");
+  let resetTimer;
 
-    const formData = new FormData(enquiryForm);
-    const name = formData.get("name").trim();
-    const email = formData.get("email").trim();
-    const message = formData.get("message").trim();
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+  const copyText = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
 
-    window.location.href = `mailto:matzyu41@gmail.com?subject=${subject}&body=${body}`;
+    const input = document.createElement("textarea");
+    input.value = text;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    input.remove();
+  };
+
+  emailCopyButton.addEventListener("click", async () => {
+    const email = emailCopyButton.dataset.email;
+
+    try {
+      await copyText(email);
+      status.textContent = "Copied to clipboard";
+      emailCopyButton.classList.add("copied");
+    } catch {
+      status.textContent = "Copy failed";
+    }
+
+    window.clearTimeout(resetTimer);
+    resetTimer = window.setTimeout(() => {
+      status.textContent = "";
+      emailCopyButton.classList.remove("copied");
+    }, 2200);
   });
 }
 
@@ -221,10 +267,10 @@ if (jobHub) {
 
     const formData = new FormData(applicationForm);
     const application = {
-      company: formData.get("company").trim(),
-      role: formData.get("role").trim(),
+      company: String(formData.get("company") || "").trim(),
+      role: String(formData.get("role") || "").trim(),
       status: formData.get("status"),
-      link: formData.get("link").trim(),
+      link: String(formData.get("link") || "").trim(),
     };
 
     const applications = [application, ...loadApplications()].slice(0, 12);
