@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 104px;
   overflow-x: hidden;
 }
 
@@ -59,7 +60,7 @@ a {
 
 .section {
   padding: 96px 0;
-  scroll-margin-top: 82px;
+  scroll-margin-top: 104px;
 }
 
 .soft {
@@ -68,11 +69,13 @@ a {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 16px;
-  z-index: 20;
+  left: 50%;
+  z-index: 100;
   width: min(1120px, calc(100% - 48px));
   margin: 0 auto;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(228, 228, 231, 0.9);
   border-radius: var(--radius);
