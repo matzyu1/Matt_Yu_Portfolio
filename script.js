@@ -42,11 +42,27 @@ if (navToggle && navMenu) {
 }
 
 navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const target = targetId && targetId.startsWith("#") ? document.querySelector(targetId) : null;
+
     if (navMenu && navToggle) {
       navMenu.classList.remove("open");
       navToggle.setAttribute("aria-expanded", "false");
     }
+
+    if (!target) return;
+
+    event.preventDefault();
+
+    const headerOffset = document.querySelector(".site-header").getBoundingClientRect().height + 32;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.history.pushState(null, "", targetId);
+    window.scrollTo({
+      top: targetTop,
+      behavior: "smooth",
+    });
   });
 });
 
