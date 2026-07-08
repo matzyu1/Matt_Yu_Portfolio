@@ -29,7 +29,7 @@
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Case Studies</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#volunteering">Volunteering</a></li>
           <li><a href="https://ai.matt-yu.com/" target="_blank" rel="noopener noreferrer">AI Portfolio</a></li>
@@ -68,7 +68,7 @@
               </div>
             </dl>
             <div class="button-row" aria-label="Portfolio actions">
-              <a class="button primary" href="#projects">View Projects</a>
+              <a class="button primary" href="#projects">View Case Studies</a>
               <a class="button secondary" href="assets/Matt-Yu-Data-Analyst-CV.pdf" download>Download CV</a>
               <a class="button secondary" href="https://ai.matt-yu.com/" target="_blank" rel="noopener noreferrer">AI Portfolio</a>
             </div>
@@ -124,21 +124,50 @@
             <h2>Analytical skills grouped around practical business work.</h2>
           </div>
           <div class="card-grid four">
-            <article class="card reveal">
+            <article class="card skill-card reveal">
               <h3>Data Analysis</h3>
-              <p>Data cleaning, KPI tracking, trend analysis, customer segmentation, profitability analysis, retention analysis</p>
+              <ul class="skill-tags">
+                <li>Data cleaning</li>
+                <li>KPI tracking</li>
+                <li>Trend analysis</li>
+                <li>Customer segmentation</li>
+                <li>Profitability analysis</li>
+                <li>Retention analysis</li>
+              </ul>
             </article>
-            <article class="card reveal">
+            <article class="card skill-card reveal">
               <h3>Tools</h3>
-              <p>SQL, PostgreSQL, Excel, Power Query, Power BI, Python, Google Sheets, VS Code</p>
+              <ul class="skill-tags">
+                <li>SQL</li>
+                <li>PostgreSQL</li>
+                <li>Excel</li>
+                <li>Power Query</li>
+                <li>Power BI</li>
+                <li>Python</li>
+                <li>Google Sheets</li>
+                <li>VS Code</li>
+              </ul>
             </article>
-            <article class="card reveal">
+            <article class="card skill-card reveal">
               <h3>Dashboarding</h3>
-              <p>PivotTables, charts, Excel dashboards, Power BI dashboards, interactive filters, reporting</p>
+              <ul class="skill-tags">
+                <li>PivotTables</li>
+                <li>Charts</li>
+                <li>Excel dashboards</li>
+                <li>Power BI dashboards</li>
+                <li>Interactive filters</li>
+                <li>Reporting</li>
+              </ul>
             </article>
-            <article class="card reveal">
+            <article class="card skill-card reveal">
               <h3>Business Insight</h3>
-              <p>Customer behaviour, e-commerce performance, commercial recommendations, operational reporting, stakeholder communication</p>
+              <ul class="skill-tags">
+                <li>Customer behaviour</li>
+                <li>E-commerce performance</li>
+                <li>Commercial recommendations</li>
+                <li>Operational reporting</li>
+                <li>Stakeholder communication</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -147,166 +176,327 @@
       <section class="section" id="projects">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Featured Projects</p>
-            <h2>Selected analysis projects with business context.</h2>
+            <p class="eyebrow">Case Studies</p>
+            <h2>Selected case studies, from problem to recommendation.</h2>
           </div>
           <div class="projects-grid">
-            <article class="project-card reveal">
-              <img src="assets/projects/ecommerce-segmentation.png" alt="Customer lifetime value segmentation chart" />
+            <article class="project-card case-study reveal">
+              <img src="assets/projects/fraud-patterns.png" alt="Customer lifetime value segmentation chart" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>E-commerce Customer &amp; Sales Analysis</h3>
-                  <span>PostgreSQL, SQL, Excel</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Customer value</span>
-                  <span>Retention</span>
-                  <span>Revenue mix</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>The business needed to know which customers actually drive revenue, and why others stop buying, so retention and marketing effort could be focused where it pays off.</p>
                 </div>
-                <p>Analysed two years of transactional e-commerce data to understand customer lifetime value, churn, repeat purchases and revenue contribution.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Segmented customers by lifetime value</li>
-                  <li>Identified high-value customers driving most revenue</li>
-                  <li>Analysed churn and repeat purchase behaviour</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Produced recommendations for retention, upselling and customer segmentation strategies.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>Two years of transactional e-commerce data covering orders, customers and revenue.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>PostgreSQL</span>
+                    <span>SQL</span>
+                    <span>Excel</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Cleaned and prepared the raw transaction data</li>
+                    <li>Wrote SQL to calculate lifetime value, repeat rate and churn</li>
+                    <li>Segmented customers by value and visualised revenue contribution in Excel</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Segmented customers by lifetime value</li>
+                    <li>Identified high-value customers driving most revenue</li>
+                    <li>Analysed churn and repeat purchase behaviour</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Prioritise retention and upselling for high-value segments, and target re-engagement at customers showing early churn signals.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>How to turn raw transactional data into meaningful customer segments and translate SQL output into commercial recommendations.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/Int_SQL_Data_Analytics" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card case-study reveal">
               <img src="assets/projects/python-ecommerce-customer-behaviour.png" alt="E-commerce customer behaviour analysis with Python project thumbnail" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>E-commerce Customer Behaviour Analysis with Python</h3>
-                  <span>Python, Pandas, NumPy, Matplotlib, Seaborn</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Python analysis</span>
-                  <span>Customer behaviour</span>
-                  <span>Sales trends</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>Understand what drives sales performance, and how customer behaviour and category mix affect revenue across the year.</p>
                 </div>
-                <p>Analysed a synthetic e-commerce transaction dataset to explore sales performance, customer behaviour, category performance and monthly trends.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Cleaned and prepared 34,500 transaction records for analysis</li>
-                  <li>Compared one-time and repeat customers to understand revenue contribution</li>
-                  <li>Analysed category revenue, profit margin, return rates and monthly trends</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Produced practical observations around high-value customers, category performance, returns and revenue movement for portfolio practice.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>A synthetic e-commerce dataset of 34,500 transaction records.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>Matplotlib</span>
+                    <span>Seaborn</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Cleaned and prepared the data in Pandas</li>
+                    <li>Engineered customer and category-level metrics</li>
+                    <li>Visualised trends and comparisons with Matplotlib and Seaborn</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Cleaned and prepared 34,500 transaction records for analysis</li>
+                    <li>Compared one-time and repeat customers to understand revenue contribution</li>
+                    <li>Analysed category revenue, profit margin, return rates and monthly trends</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Focus on nurturing repeat customers and the strongest categories, and review categories with high return rates that erode margin.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>Strengthened my Python data-wrangling and visualisation skills, and how to structure an analysis end-to-end.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/Python_Data_Analytics" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card case-study reveal">
               <img src="assets/projects/superstore-dashboard.gif" alt="Excel Superstore dashboard preview" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>Excel Superstore Sales Dashboard</h3>
-                  <span>Excel, PivotTables, Formulas, Data Validation</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Dashboarding</span>
-                  <span>Profitability</span>
-                  <span>Discount impact</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>Sales data sat in raw tables, making it hard to see what was actually profitable and how discounting was affecting margin.</p>
                 </div>
-                <p>Built an interactive Excel dashboard to analyse sales performance, profitability and discount impact across products, states and time periods.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Compared sales and profit trends</li>
-                  <li>Identified high and low-performing product categories</li>
-                  <li>Analysed how discounting affected profitability</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Helped turn retail data into clear commercial insights for pricing and profitability decisions.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>The Superstore retail sales dataset covering orders, products, regions and profit.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>Excel</span>
+                    <span>PivotTables</span>
+                    <span>Formulas</span>
+                    <span>Data Validation</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Cleaned and structured the raw sales data</li>
+                    <li>Built PivotTables and formulas to summarise sales and profit</li>
+                    <li>Designed an interactive dashboard with slicers and data validation</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Compared sales and profit trends</li>
+                    <li>Identified high and low-performing product categories</li>
+                    <li>Analysed how discounting affected profitability</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Reduce heavy discounting on low-margin categories and concentrate effort on consistently profitable products and regions.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>How to design a clear, interactive Excel dashboard and communicate profitability in a way stakeholders can act on.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/Excel_Data_Analytics/tree/main/Superstore_Project" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card case-study reveal">
               <img src="assets/projects/powerbi-superstore-dashboard.gif" alt="Power BI Superstore sales dashboard overview" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>Power BI Superstore Sales Performance Dashboard</h3>
-                  <span>Power BI, Power Query, DAX, Data Modelling</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Interactive BI</span>
-                  <span>DAX measures</span>
-                  <span>Profitability</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>Spreadsheet-based reporting didn't scale and didn't allow fast, interactive review of sales and profit performance.</p>
                 </div>
-                <p>Rebuilt the Superstore sales analysis as an interactive Power BI report covering sales, profit, discount impact and regional performance.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Built KPI cards and slicers so users could quickly review performance and filter the report.</li>
-                  <li>Created a date table and DAX measures for sales, profit, margin and shipping analysis.</li>
-                  <li>Added drill-through pages, tooltips and conditional formatting to make weak-margin areas easier to spot.</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Turned spreadsheet-based sales reporting into a scalable BI dashboard for faster performance review and decision-making.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>The Superstore retail sales dataset covering sales, profit, discounts and regional performance.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>Power BI</span>
+                    <span>Power Query</span>
+                    <span>DAX</span>
+                    <span>Data Modelling</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Modelled the data with a dedicated date table</li>
+                    <li>Wrote DAX measures for sales, profit, margin and shipping</li>
+                    <li>Built KPI cards, slicers, drill-through pages and conditional formatting</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Built KPI cards and slicers so users could quickly review performance and filter the report.</li>
+                    <li>Created a date table and DAX measures for sales, profit, margin and shipping analysis.</li>
+                    <li>Added drill-through pages, tooltips and conditional formatting to make weak-margin areas easier to spot.</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Use the dashboard for regular performance reviews and act on the weak-margin areas highlighted by conditional formatting.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>Data modelling and DAX, and how to build a scalable, interactive BI report from spreadsheet data.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/PowerBI_Data_Analytics" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card reveal">
-              <img src="assets/projects/fraud-patterns.png" alt="Fraudulent transaction characteristics chart" />
+            <article class="project-card case-study reveal">
+              <img src="assets/projects/ecommerce-segmentation.png" alt="Fraudulent transaction characteristics chart" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>Digital Transaction Fraud SQL Project</h3>
-                  <span>SQL, PostgreSQL, VS Code</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Risk signals</span>
-                  <span>Payment channels</span>
-                  <span>Investigation</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>Identify the patterns that separate fraudulent transactions from legitimate ones, to support monitoring and prioritise investigation.</p>
                 </div>
-                <p>Explored digital transaction data to identify suspicious fraud patterns, high-risk payment channels and behavioural indicators.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Analysed fraud by payment channel and device type</li>
-                  <li>Identified customers and merchants linked to higher fraud activity</li>
-                  <li>Compared transaction velocity between legitimate and fraudulent activity</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Showed how SQL can support fraud monitoring, risk detection and investigation prioritisation.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>A digital transaction dataset with payment channel, device type and behavioural fields.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>SQL</span>
+                    <span>PostgreSQL</span>
+                    <span>VS Code</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Explored and aggregated transactions in SQL</li>
+                    <li>Compared fraud rates by payment channel and device type</li>
+                    <li>Analysed transaction velocity across legitimate and fraudulent activity</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Analysed fraud by payment channel and device type</li>
+                    <li>Identified customers and merchants linked to higher fraud activity</li>
+                    <li>Compared transaction velocity between legitimate and fraudulent activity</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Prioritise monitoring on the highest-risk channels and devices, and flag high-velocity accounts for review.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>How to use SQL for risk analysis and pattern detection, and how to frame findings for a fraud-monitoring audience.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/SQL_Data_Analytics" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card case-study reveal">
               <img src="assets/projects/london-housing-price-salary.png" alt="London housing price and salary trend chart" />
               <div class="project-content">
                 <div class="project-topline">
+                  <span class="case-label">Case Study</span>
                   <h3>London Housing Market Analysis</h3>
-                  <span>Excel, Power Query, Power Pivot, Data Visualisation</span>
                 </div>
-                <div class="project-tags" aria-label="Project focus">
-                  <span>Affordability</span>
-                  <span>Market trends</span>
-                  <span>Power Query</span>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>Understand housing affordability across London and what drives property value from borough to borough.</p>
                 </div>
-                <p>Analysed London housing data to explore property prices, affordability, crime impact and housing demand.</p>
-                <h4>Key insights</h4>
-                <ul>
-                  <li>Compared property prices against salary trends</li>
-                  <li>Analysed housing affordability by borough</li>
-                  <li>Explored the relationship between crime and property value</li>
-                </ul>
-                <h4>Business value</h4>
-                <p>Presented complex market data in a clear format for buyers, investors and decision-makers.</p>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>London housing data covering property prices, salaries, crime and housing demand by borough.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>Excel</span>
+                    <span>Power Query</span>
+                    <span>Power Pivot</span>
+                    <span>Data Visualisation</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Imported and cleaned the data with Power Query</li>
+                    <li>Modelled the relationships with Power Pivot</li>
+                    <li>Visualised prices, affordability and crime trends</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Compared property prices against salary trends</li>
+                    <li>Analysed housing affordability by borough</li>
+                    <li>Explored the relationship between crime and property value</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Highlight the boroughs offering the best affordability and factor crime levels into value assessments for buyers and investors.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>Power Query and Power Pivot for larger datasets, and how to present complex market data in a clear, decision-ready format.</p>
+                </div>
                 <div class="project-actions">
                   <a class="button small primary" href="https://github.com/matzyu1/Excel_Data_Analytics/tree/main/London_Housing_Project" target="_blank" rel="noopener noreferrer">View Case Study</a>
                 </div>

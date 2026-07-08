@@ -6,10 +6,22 @@ const jobHub = document.querySelector("#job-hub");
 const revealItems = document.querySelectorAll(".reveal");
 const emailCopyButton = document.querySelector(".email-copy");
 
+const siteHeader = document.querySelector(".site-header");
+
 const year = document.querySelector("#year");
 
 if (year) {
   year.textContent = new Date().getFullYear();
+}
+
+// Adds a subtle solid state to the floating header once the page is scrolled.
+if (siteHeader) {
+  const updateHeaderState = () => {
+    siteHeader.classList.toggle("scrolled", window.scrollY > 24);
+  };
+
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
 }
 
 if (revealItems.length > 0) {
