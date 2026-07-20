@@ -181,6 +181,59 @@
           </div>
           <div class="projects-grid">
             <article class="project-card case-study reveal">
+              <img src="assets/projects/marketplace-reliability-supply-by-hour.png" alt="Shift supply by hour of day, showing an empty overnight reopening window" />
+              <div class="project-content">
+                <div class="project-topline">
+                  <span class="case-label">Case Study</span>
+                  <h3>Marketplace Reliability: Solving Late Shift Cancellations</h3>
+                </div>
+                <div class="cs-section">
+                  <h4>Problem</h4>
+                  <p>A two-sided staffing marketplace loses site trust when last-minute shift cancellations cannot be refilled in time. The task was to find out why some cancellations get recovered and others do not, and turn it into a fix an executive could act on.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Dataset</h4>
+                  <p>Around 146,000 shift, booking and cancellation records from a single regional market (2021). Raw data is proprietary and withheld; the repo ships the anonymised report and aggregated model.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>Tools Used</h4>
+                  <div class="project-tags" aria-label="Tools used">
+                    <span>SQL</span>
+                    <span>PostgreSQL</span>
+                    <span>Excel</span>
+                  </div>
+                </div>
+                <div class="cs-section">
+                  <h4>Process</h4>
+                  <ul>
+                    <li>Tiered every cancellation by lead time to measure damage, not just volume</li>
+                    <li>Tested and rejected the intuitive "remove the repeat offenders" fix</li>
+                    <li>Segmented by role, price and time of day, controlling for severity</li>
+                    <li>Traced the failure to a morning shift reopening into an empty overnight market</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Key Insights</h4>
+                  <ul>
+                    <li>Recovery, not cancellation, is the real problem</li>
+                    <li>Damage concentrates in one worker role and one shift band</li>
+                    <li>Price is not the lever — recovery is flat across charge bands</li>
+                  </ul>
+                </div>
+                <div class="cs-section">
+                  <h4>Business Recommendations</h4>
+                  <p>Offer the unfilled morning shift to the on-site overnight worker at a premium, opt-in and triggered at the end of their shift — a costed, testable intervention worth under 1.2% of market revenue.</p>
+                </div>
+                <div class="cs-section">
+                  <h4>What I Learned</h4>
+                  <p>How to pick the right denominator, control for confounders, falsify an intuitive hypothesis, and size an intervention with guardrails and explicit kill criteria.</p>
+                </div>
+                <div class="project-actions">
+                  <a class="button small primary" href="https://github.com/matzyu1/Marketplace_Reliability_Analytics" target="_blank" rel="noopener noreferrer">View Case Study</a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card case-study reveal">
               <img src="assets/projects/fraud-patterns.png" alt="Customer lifetime value segmentation chart" />
               <div class="project-content">
                 <div class="project-topline">
